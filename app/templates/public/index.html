@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Index</title>
-</head>
-<body>
-    <img class="logo" src="{{ url_for('static', filename='img/logo.png')}}">
-    <h1 style="color: blue">
-       Главная
-    </h1>
-    <p>Это HTML фаил отрисованый с помощью фласк</p>
-    <script src="{{ url_for('static', filename='js/app')}}"></script>
-</body>
-</html>
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Home</h1>
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}
