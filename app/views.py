@@ -8,5 +8,5 @@ def index():
 
 
 @app.route("/about")
-def route():
-    return "<h1 style='color: red'>About!!!!!!!</h1>"
+def about():
+    return render_template('public/about.html')
