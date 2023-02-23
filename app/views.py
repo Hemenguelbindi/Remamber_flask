@@ -44,10 +44,9 @@ def jinja():
         description='Template desing tutorial',
         url='https://github.com/Hemenguelbindi/Remamber_flask'
     )
+
     def repid(x, q):
         return x * q
-
-
 
     return render_template(
         'public/jinja.html',
