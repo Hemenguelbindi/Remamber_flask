@@ -1,0 +1,70 @@
+{% extends "public/templates/public_template.html"%}
+
+{% block title %}Jinja{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Jinja template</h1>
+      <hr>
+      <!--  Вывод переменной   -->
+      <h4>Переменные</h4>
+      <hr>
+      <p>Имя: {{ my_name }}</p>
+      <hr>
+
+      <!-- Работа над списком  вывод его с помощью цикла -->
+      <h4>Цикл</h4>
+      <ul>
+          {% for lang in langs %}
+              <li>{{ lang }}</li>
+          {% endfor %}
+      </ul>
+      <!-- Работа над списком с выводом индекса     -->
+      <h4>Цикл в выводом индекса</h4>
+      <ul>
+          {% for lang in langs %}
+              <li>{{ loop.index }}: {{ lang }}</li>
+          {% endfor %}
+      </ul>
+
+      <!-- Работа со словарем вывод ключа и значения  -->
+      <h4>Looping a dict</h4>
+      <ul>
+          {% for k, v in friends.items() %}
+              <li>{{ k }}: {{ v }}</li>
+          {% endfor %}
+      </ul>
+    </div>
+    <!-- Работа со словарем вывод ключа   -->
+      <h4>Looping a dict keys</h4>
+      <ul>
+          {% for k in friends.keys() %}
+              <li>{{ k }}</li>
+          {% endfor %}
+      </ul>
+    <!-- Работа со словарем вывод значения   -->
+      <h4>Looping a dict keys</h4>
+      <ul>
+          {% for v in friends.items() %}
+              <li>{{ v }}</li>
+          {% endfor %}
+      </ul>
+      <!-- Работа со списком по значению   -->
+      <h4>Значение списка</h4>
+      <p>{{ langs[0] }}</p>
+      <!-- Работа со словарем по ключу   -->
+      <h4>Значение словоря по ключу</h4>
+      <p>{{ friends['Tom'] }}</p>
+      <h4>Значение из класса</h4>
+      <p>{{ my_remote.name }}</p>
+      <!-- Распаковка переменных     -->
+      <h4>Распаковка переменных</h4>
+      {% set a, b = colors %}
+      <p>{{ a }}</p>
+      <p>{{ b }}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
